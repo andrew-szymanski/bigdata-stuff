@@ -11,15 +11,15 @@ ENV_FILE="./ldap.env"
 . ${ENV_FILE}
 
 # input arg should be userid to search for
-: ${1?"Usage: $0 USERID"}
+: ${1?"ERROR: you must specify userid, i.e $0 <userid>"}
 #  Script exits here if command-line parameter absent,
 #+ with following error message.
 #    usage-message.sh: 1: Usage: usage-message.sh ARGUMENT
 
-echo "These two lines echo only if command-line parameter given."
-echo "command-line parameter = \"$1\""
-
+#echo "These two lines echo only if command-line parameter given."
+#echo "command-line parameter = \"$1\""
 USERID=$1
+log "USERID: ${USERID}"
 
 # verify we have all env vars needed
 ENV_VARIABLES="LDAP_HOST LDAP_PORT"
