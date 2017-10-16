@@ -19,9 +19,10 @@ ENV_FILE="./ldap.env"
 #echo "These two lines echo only if command-line parameter given."
 #echo "command-line parameter = \"$1\""
 USERID=$1
-log "USERID: ${USERID}"
+log "USERID: [${USERID}]"
 
 # verify we have all env vars needed
+log "verifying required env variables:"
 ENV_VARIABLES="LDAP_HOST LDAP_PORT"
 ERROR=0
 for ENV_VAR in ${ENV_VARIABLES}; do
