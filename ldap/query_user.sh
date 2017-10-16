@@ -1,3 +1,9 @@
+#!/usr/bin/env bash
+
+ENV_FILE="./ldap.env"
+
+. ${ENV_FILE}
+
 
 
 
