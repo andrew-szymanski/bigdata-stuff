@@ -1,0 +1,26 @@
+#!/usr/bin/env bash
+
+###  beeline script which works out all config parameters
+###  so user doesn't need to know them
+###
+
+log() {
+   date "+%m-%d:%H:%M:%S $*"
+}
+
+
+# main
+log "$0 starting..."
+
+# TODO - work out path to the script properly (in the same dir)
+JDBC_CONNECT_STRING=$(ub_beeline_get_jdbc_connection_string.py)
+log "JDBC_CONNECT_STRING: [${JDBC_CONNECT_STRING}]"
+
+beeline -u "${JDBC_CONNECT_STRING}" "$@"
+RC=$?
+if [ $RC -ne 0 ]; then
+  log "$0 FAILED"
+else
+  log "$0 DONE"
+fi
+exit $RC
