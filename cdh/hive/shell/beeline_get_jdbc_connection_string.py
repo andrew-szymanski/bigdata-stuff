@@ -16,7 +16,7 @@ root = tree.getroot()
 nodes = root.findall('property')
 
 # internal hive vars
-hive_server2_thrift_port = "NULL"
+hive_server2_thrift_port = "10000"
 hive_server2_thrift_host = "NULL"
 hive_server2_thrift_principal = "NULL"
 

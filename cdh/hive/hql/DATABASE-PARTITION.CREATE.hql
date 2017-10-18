@@ -1,2 +1,1 @@
-
-CREATE DATABASE partition.01 LOCATION ‘hdfs://my-master-namenode:8020/user/gagan/my_warehouse/gagan_stage_custom.db’;
+CREATE DATABASE partition.01 LOCATION ‘hdfs://quickstart.cloudera:8020/partion.01/hive/db/partition.01.db’;

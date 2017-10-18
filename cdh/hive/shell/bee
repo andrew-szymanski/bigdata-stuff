@@ -13,7 +13,7 @@ log() {
 log "$0 starting..."
 
 # TODO - work out path to the script properly (in the same dir)
-JDBC_CONNECT_STRING=$(ub_beeline_get_jdbc_connection_string.py)
+JDBC_CONNECT_STRING=$(./beeline_get_jdbc_connection_string.py)
 log "JDBC_CONNECT_STRING: [${JDBC_CONNECT_STRING}]"
 
 beeline -u "${JDBC_CONNECT_STRING}" "$@"
