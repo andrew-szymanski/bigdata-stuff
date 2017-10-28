@@ -3,6 +3,10 @@
 
 http://gethue.com/apache-sentry-made-easy-with-the-new-hue-security-app/
 
+export HUE_CONF_DIR="/var/run/cloudera-scm-agent/process/`ls -alrt /var/run/cloudera-scm-agent/process | grep HUE | tail -1 | awk '{print $9}'`"
+echo $HUE_CONF_DIR
+
+
 /usr/lib/hue
 su -s /bin/bash -c './build/env/bin/hue -help' hue
 
@@ -14,5 +18,22 @@ http://gethue.com/how-to-manage-the-hue-database-with-the-shell/
 export HUE_SECRET_KEY=foobar
 
 su -s /bin/bash -c '/usr/lib/hue/build/env/bin/hue shell' hue
+
+
+#                  ****************************
+#                  *** password not present fix
+#                  ****************************
+[root@quickstart hue]# export HUE_SECRET_KEY=Cloudera
+[root@quickstart hue]# #Hue Mysql database password
+[root@quickstart hue]# export HUE_DATABASE_PASSWORD=oozie
+[root@quickstart hue]# #Finally
+[root@quickstart hue]# export HUE_IGNORE_PASSWORD_SCRIPT_ERRORS=1
+[root@quickstart hue]# /usr/lib/hue/build/env/bin/hue shell
+Python 2.6.6 (r266:84292, Jul 23 2015, 15:22:56) 
+[GCC 4.4.7 20120313 (Red Hat 4.4.7-11)] on linux2
+Type "help", "copyright", "credits" or "license" for more information.
+(InteractiveConsole)
+>>> 
+
 
 
