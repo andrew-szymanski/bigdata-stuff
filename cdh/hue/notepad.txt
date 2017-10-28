@@ -35,5 +35,14 @@ Type "help", "copyright", "credits" or "license" for more information.
 (InteractiveConsole)
 >>> 
 
-
-
+#                  ****************************
+#                  *** reset password and make superuser
+#                  ****************************
+from django.contrib.auth.models import User
+user = User.objects.get(username='xxxx')
+user.is_active=True
+user.save()
+user.is_superuser=True
+user.save()
+user.set_password('hue')
+user.save()
