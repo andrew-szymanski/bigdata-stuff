@@ -21,6 +21,12 @@ su -s /bin/bash -c '/usr/lib/hue/build/env/bin/hue shell' hue
 
 
 #                  ****************************
+#                  *** commands (2016 March)
+#                  ****************************
+http://gethue.com/hue-api-execute-some-builtin-commands/
+
+
+#                  ****************************
 #                  *** password not present fix
 #                  ****************************
 [root@quickstart hue]# export HUE_SECRET_KEY=Cloudera
