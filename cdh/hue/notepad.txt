@@ -6,3 +6,13 @@ http://gethue.com/apache-sentry-made-easy-with-the-new-hue-security-app/
 /usr/lib/hue
 su -s /bin/bash -c './build/env/bin/hue -help' hue
 
+
+
+#
+http://gethue.com/how-to-manage-the-hue-database-with-the-shell/
+
+export HUE_SECRET_KEY=foobar
+
+su -s /bin/bash -c '/usr/lib/hue/build/env/bin/hue shell' hue
+
+
