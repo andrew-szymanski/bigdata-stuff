@@ -3,7 +3,7 @@
 
 http://gethue.com/apache-sentry-made-easy-with-the-new-hue-security-app/
 
-export HUE_CONF_DIR="/var/run/cloudera-scm-agent/process/`ls -alrt /var/run/cloudera-scm-agent/process | grep HUE | tail -1 | awk '{print $9}'`"
+export HUE_CONF_DIR="/var/run/cloudera-scm-agent/process/`ls -alrt /var/run/cloudera-scm-agent/process | grep HUE_SERVER | tail -1 | awk '{print $9}'`"
 echo $HUE_CONF_DIR
 
 
@@ -45,10 +45,18 @@ Type "help", "copyright", "credits" or "license" for more information.
 #                  *** reset password and make superuser
 #                  ****************************
 from django.contrib.auth.models import User
-user = User.objects.get(username='xxxx')
+user = User.objects.get(username='superuser')
 user.is_active=True
 user.save()
 user.is_superuser=True
 user.save()
 user.set_password('hue')
 user.save()
+
+
+#                  ****************************
+#                  *** Cloudera
+#                  ****************************
+https://www.cloudera.com/documentation/enterprise/5-12-x/topics/cdh_sg_hue_security.html
+
+https://community.cloudera.com/t5/Web-UI-Hue-Beeswax/How-to-configure-Hue-to-access-multiple-Active-Directory-LDAP/td-p/51041
