@@ -45,7 +45,7 @@ Type "help", "copyright", "credits" or "license" for more information.
 #                  *** reset password and make superuser
 #                  ****************************
 from django.contrib.auth.models import User
-user = User.objects.get(username='superuser')
+user = User.objects.get(username='dasz326')
 user.is_active=True
 user.save()
 user.is_superuser=True
@@ -59,4 +59,10 @@ user.save()
 #                  ****************************
 https://www.cloudera.com/documentation/enterprise/5-12-x/topics/cdh_sg_hue_security.html
 
+
+
+
+
 https://community.cloudera.com/t5/Web-UI-Hue-Beeswax/How-to-configure-Hue-to-access-multiple-Active-Directory-LDAP/td-p/51041
+
+https://github.com/cloudera/hue/blob/master/desktop/core/src/desktop/management/commands/ldaptest.py
